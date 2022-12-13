@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../../static/assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../../static/img/cropped-favicon-16x16.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    Perfil del Profesor
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <!-- CSS Files -->
+  <link href="../../static/assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="../../static/assets/demo/demo.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../../static/css/productos-academicos.css">
+  <!-- Notiflix -->
+  <link rel="stylesheet" href="../../static/assets/notiflix/notiflix-3.2.2.min.css" />
+  <script src="../static/assets/notiflix/notiflix-3.2.2.min.js"></script>
+</head>
+
+<body class="" onload="cambioPlaneacion();">
+  <div class="wrapper ">
+    <div class="sidebar" data-color="azure" data-background-color="white" data-image="../../static/assets/img/sidebar-3.jpg">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+        Tip 2: you can also add an image using data-image tag
+    -->
+      <div class="logo">
+          <img src="../../static/img/UP_Victoria_200.png" class="mx-auto d-block img-fluid">
+      </div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../profesor/dashboard.php">
+              <i class="material-icons">dashboard</i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <!--
+          <li class="nav-item active">
+            <a class="nav-link" href="./perfil_profesor.html">
+              <i class="material-icons">person</i>
+              <p>Perfil de usuario</p>
+            </a>
+          </li>
+          -->
+          <li class="nav-item ">
+            <a class="nav-link" href="../profesor/disponibilidad.php">
+              <i class="material-icons">view_comfy</i>
+              <p>Disponibilidad</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../profesor/productos_academicos.php">
+              <i class="material-icons">library_books</i>
+              <p>Productos Académicos</p>
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">
+              <i class="material-icons">assignment</i>
+              <p>Planeaciones académicas</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../profesor/cargas_academicas.php">
+              <i class="material-icons">collections_bookmark</i>
+              <p>Cargas académicas</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <a class="navbar-brand" href="javascript:;">Home / Perfil de Usuario</a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end">
+            <form class="navbar-form">
+              <div class="input-group no-border">
+                <input type="text" value="" class="form-control" placeholder="Search...">
+                <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                  <i class="material-icons">search</i>
+                  <div class="ripple-container"></div>
+                </button>
+              </div>
+            </form>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="javascript:;">
+                  <i class="material-icons">dashboard</i>
+                  <p class="d-lg-none d-md-block">
+                    Dashboard
+                  </p>
+                </a>
+              </li>
+              <!--<li class="nav-item dropdown">
+                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="material-icons">notifications</i>
+                  <span class="notification">5</span>
+                  <p class="d-lg-none d-md-block">
+                    Some Actions
+                  </p>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#">Mike John responded to your email</a>
+                  <a class="dropdown-item" href="#">You have 5 new tasks</a>
+                  <a class="dropdown-item" href="#">You're now friend with Andrew</a>
+                  <a class="dropdown-item" href="#">Another Notification</a>
+                  <a class="dropdown-item" href="#">Another One</a>
+                </div>
+              </li> -->
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="material-icons">person</i>
+                  <p class="d-lg-none d-md-block">
+                    Cuenta
+                  </p>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
+                  <a class="dropdown-item" href="../profesor/perfil_profesor.html">Perfil</a> <!-- Vamos al perfil -->
+                  <!--<a class="dropdown-item" href="#">Configuración</a>-->
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Cerrar Sesión</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- End Navbar -->
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+              <div class=" col-ld-12 col-md-12">
+                  <div class="card">
+                      <div class="card-header card-header-primary">
+                          <h4 class="card-title" id="planeacion-titulo">Planeación Académica / Septiembre - Diciembre 2020 / Dr. Marco Aurelio Nuño Maganda</h4>
+                      </div>
+                      <div class="card-body">
+                          <div id="accordion" role="tablist">
+                              <div class="card">
+                                  <div class="card-header titulos" role="tab" id="headingOne">
+                                      <h6 class="mb-0">
+                                          Gestión Académica
+                                      </h6>
+                                      <h6 class="mb-0">
+                                        Total 15
+                                    </h6>
+                                  </div>
+                                  <a id="collapseOne" class="show" role="tabpanel" aria-labelledby="headingOne">
+                                      <div class="card-body">
+                                        <div class="table-responsive" id="contenido">
+                                          <table>
+                                              <tbody>
+                                                <tr>
+                                                    <th><h6>Actividad</h6></th>
+                                                    <th><h6>Horas</h6></th>
+                                                    <th><h6>Evidencia al término del periodo</h6></th>
+                                                </tr>
+                                                <tr>
+                                                    <td>Secretario de Academia</td>
+                                                    <td>10</td>
+                                                    <td>Minutos de reunión</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Miembro del consejo Académico</td>
+                                                    <td>5</td>
+                                                    <td>Minutos de reunión</td>
+                                                </tr>
+                                              </tbody>
+                                          </table>
+                                          <!--<div class="titulos">
+                                            <h6>Actividad</h6>
+                                            <h6>Horas</h6>
+                                            <h6>Evidencia al término del periodo</h6>
+                                          </div>
+                                          <div class="datos titulos">
+                                            <p>Secretario de Academia</p>
+                                            <p>10</p>
+                                            <p>Minutos de reunión</p>
+                                          </div>
+                                          <div class="datos titulos">
+                                            <p>Miembro del consejo Académico</p>
+                                            <p>5</p>
+                                            <p>Minutos de reunión</p>
+                                          </div>-->
+                                        </div>
+                                      </div>
+                                  </a>
+                              </div> <!-- end card collapseOne-->
+
+                              <div class="card">
+                                <div class="card-header titulos" role="tab" id="headingTwo">
+                                    <h6 class="mb-0">
+                                        Capacitación y Desarrollo Profesional
+                                    </h6>
+                                    <h6 class="mb-0">
+                                      Total 15
+                                  </h6>
+                                </div>
+                                <a id="collapseTwo" class="show" role="tabpanel" aria-labelledby="headingTwo">
+                                    <div class="card-body">
+                                        <div class="table-responsive" id="contenido2">
+                                            <table>
+                                                <tbody>
+                                                  <tr>
+                                                      <th><h6>Curso</h6></th>
+                                                      <th><h6>Horas</h6></th>
+                                                      <th><h6>Evidencia al término del periodo</h6></th>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Analisis de Datos en Matlab</td>
+                                                      <td>15</td>
+                                                      <td>Certificado de asistencia</td>
+                                                  </tr>
+                                                </tbody>
+                                            </table>
+                                          <!--<div class="titulos">
+                                            <h6>Curso</h6>
+                                            <h6>Horas</h6>
+                                            <h6>Evidencia al término del periodo</h6>
+                                          </div>
+                                          <div class="datos titulos">
+                                            <p>Analisis de Datos en Matlab</p>
+                                            <p>15</p>
+                                            <p>Certificado de asistencia</p>
+                                          </div>-->
+                                        </div>
+                                    </div>
+                                </a>
+                            </div> <!-- end card collapseTwo-->
+
+                            <div class="card">
+                                <div class="card-header" role="tab" id="headingThree">
+                                    <h6 class="mb-0">
+                                      Asesorías
+                                    </h6>
+                                </div>
+                                <a id="collapseThree" class="show" role="tabpanel" aria-labelledby="headingTwo">
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table>
+                                                <tbody>
+                                                  <tr>
+                                                      <th><h6>Asesor Institucional Estancia</h6></th>
+                                                      <th><h6>Asesor Empresarial Estancia</h6></th>
+                                                      <th><h6>Asesor Institucional Estadía</h6></th>
+                                                      <th><h6>Asesor Empresarial Estadía</h6></th>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>3</td>
+                                                      <td>2</td>
+                                                      <td>4</td>
+                                                      <td>1</td>
+                                                  </tr>
+                                                </tbody>
+                                            </table>
+                                          <!--<div class="titulos">
+                                            <h6>Asesor Institucional Estancia</h6>
+                                            <h6>Asesor Empresarial Estancia</h6>
+                                            <h6>Asesor Institucional Estadía</h6>
+                                            <h6>Asesor Empresarial Estadía</h6>
+                                          </div>-->
+                                          <div class="datos titulos">
+                                            <p>Evidencia por medio de: <br>Reporte de estancia<br>No. de Alumnos / Proyectos</p>
+                                            <!--<p>3</p> 
+                                            <p>2</p> 
+                                            <p>4</p>
+                                            <p>1</p>-->                                      
+                                          </div>
+                                          <hr>
+                                          <div class="lista">
+                                            <ul>
+                                              <li>3 HRAS - ASESOR INSTITUCIONAL POR CADA ASESORADO DE ESTANCIA</li>
+                                              <li>3 HRAS - ASESOR INSTITUCIONAL POR CADA ASESORADO DE ESTANCIA</li>
+                                              <li>5 HRAS - ASESOR INSTITUCIONAL POR CADA ASESORADO DE ESTADÍA</li>
+                                              <li>5 HRAS - PROYECTO COMO ASESOR EMPRESARIAL DE ESTANCIA</li>
+                                              <li>20 HRAS - PROYECTO COMO ASESOR EMPRESARIAL DE ESTADÍA</li>
+                                            </ul>
+                                          </div>
+                                          <div class="parrafo titulos">
+                                            2 ALUMNOS COMO ASESOR EMPRESARIAL DE ESTADÍA X PROFESOR, MAX 4 ASESORADOS POR <br> PROFESOR ENTRE ESTANCIA Y ESTADÍA, LLEVAR REGISTRO DE ASESORÍAS EN EL SITA
+                                          </div>
+                                          <div class="total titulos">
+                                            <h6>Asesorías académicas sobre asignaturas afines</h6>
+                                            <h6>25</h6>
+                                          </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div> <!-- end card collapseTwo-->
+
+                            <div class="card">
+                                <div class="card-header titulos" role="tab" id="headingThree">
+                                    <h6 class="mb-0">
+                                      Promoción
+                                    </h6>
+                                    <h6 class="mb-0">
+                                      Total 15
+                                    </h6>
+                                </div>
+                                <a id="collapseThree" class="show" role="tabpanel" aria-labelledby="headingTwo">
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <div class="datos">
+                                              <p>15</p>
+                                            </div>                                            
+                                            <div class="parrafo">
+                                              Se desarrollarán sesiones de promoción a través de videoconferencias o difusión de material multimedia desarrollado o propuesto por profesores.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div> <!-- end card collapseTwo-->
+
+                            <div class="card">
+                                <div class="card-header titulos" role="tab" id="headingThree">
+                                    <h6 class="mb-0">
+                                      Vinculación
+                                    </h6>
+                                    <h6 class="mb-0">
+                                      Total 15
+                                    </h6>
+                                </div>
+                                <a id="collapseThree" class="show" role="tabpanel" aria-labelledby="headingTwo">
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table>
+                                                <tbody>
+                                                  <tr>
+                                                      <th><h6>Actividad</h6></th>
+                                                      <th><h6>Empresa / Institución</h6></th>
+                                                      <th><h6>Horas</h6></th>
+                                                      <th><h6>Evidencia al Término del Periodo</h6></th>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Conferencia CBTis 271</td>
+                                                      <td>CBTis 271</td>
+                                                      <td>3</td>
+                                                      <td>Certificado de asistencia</td>
+                                                  </tr>
+                                                </tbody>
+                                            </table>
+                                          <!--<div class="titulos">
+                                            <h6>Actividad</h6>
+                                            <h6>Empresa / Institución</h6>
+                                            <h6>Horas</h6>
+                                            <h6>Evidencia al Término del Periodo</h6>
+                                          </div>
+                                          <div class="datos titulos">
+                                            <p>Conferencia CBTis 271</p>
+                                            <p>CBTis 271</p>
+                                            <p>3</p>
+                                            <p>Certificado de asistencia</p>
+                                          </div>-->
+                                        </div>
+                                    </div>
+                                </a>
+                            </div> <!-- end card collapseTwo-->
+
+                            <div class="card">
+                                <div class="card-header titulos" role="tab" id="headingThree">
+                                    <h6 class="mb-0">
+                                        Capacitación y Desarrollo Profesional
+                                    </h6>
+                                    <h6 class="mb-0">
+                                      Total 15 <br> Total de horas
+                                    </h6>
+                                    <p>25</p>
+                                </div>
+                                <a id="collapseThree" class="show" role="tabpanel" aria-labelledby="headingTwo">
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table>
+                                                <tbody>
+                                                  <tr>
+                                                      <th><h6>Actividad</h6></th>
+                                                      <th><h6>Tipo de Producto</h6></th>
+                                                      <th><h6>% de Avance</h6></th>
+                                                      <th><h6>% Esperado al término</h6></th>
+                                                      <th><h6>Fecha de tentiativa</h6></th>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Asesoría Tesis Maestría</td>
+                                                      <td>Tesis</td>
+                                                      <td>20</td>
+                                                      <td>50</td>
+                                                      <td>Diciembre 2022</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>Artículo sobre móviles</td>
+                                                    <td>Artículo</td>
+                                                    <td>10</td>
+                                                    <td>40</td>
+                                                    <td>Diciembre 2022</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                          <!--<div class="titulos">
+                                            <h6>Actividad</h6>
+                                            <h6>Tipo de Producto</h6>
+                                            <h6>% de Avance</h6>
+                                            <h6>% Esperado al término</h6>
+                                            <h6>Fecha de tentiativa</h6>
+                                          </div>
+                                          <div class="datos titulos">
+                                            <p>Asesoría Tesis Maestría</p>
+                                            <p>Tesis</p>
+                                            <p>20</p>
+                                            <p>50</p>
+                                            <p>Diciembre 2022</p>
+                                          </div>
+                                          <div class="datos titulos">
+                                            <p>Artículo sobre móviles</p>
+                                            <p>Artículo</p>
+                                            <p>10</p>
+                                            <p>40</p>
+                                            <p>Diciembre 2022</p>
+                                          </div>-->
+                                        </div>
+                                    </div>
+                                </a>
+                            </div> <!-- end card collapseTwo-->
+                            <div class="totales titulos">
+                                <h6>Total de horas de actividades <br>Académico-Administrativas</h6>
+                                <p>350</p>
+                                <h6>Total de horas al cuatrimestre</h6>
+                                <p>230</p>
+                                <h6>Aceptar</h6>
+                                <input type="checkbox" name="" id="">
+                                <button class="btn btn-primary" onClick="history.go(-1);">Regresar</button>
+                                <button class="btn">Guardar</button>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="container-fluid">
+          <nav class="float-left">
+            <ul>
+              <li>
+                <a href="https://creative-tim.com/presentation">
+                  About Us
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="copyright float-right">
+            &copy;
+            <script>
+              document.write(new Date().getFullYear())
+            </script>, Martagón Systems & Technology
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  
+  <!--   Core JS Files   -->
+  <script src="../../static/assets/js/core/jquery.min.js"></script>
+  <script src="../../static/assets/js/core/popper.min.js"></script>
+  <script src="../../static/assets/js/core/bootstrap-material-design.min.js"></script>
+  <script src="../../static/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <!-- Plugin for the momentJs  -->
+  <script src="../../static/assets/js/plugins/moment.min.js"></script>
+  <!--  Plugin for Sweet Alert -->
+  <script src="../../static/assets/js/plugins/sweetalert2.js"></script>
+  <!-- Forms Validations Plugin -->
+  <script src="../../static/assets/js/plugins/jquery.validate.min.js"></script>
+  <!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
+  <script src="../../static/assets/js/plugins/jquery.bootstrap-wizard.js"></script>
+  <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+  <script src="../../static/assets/js/plugins/bootstrap-selectpicker.js"></script>
+  <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+  <script src="../../static/assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
+  <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
+  <script src="../../static/assets/js/plugins/jquery.dataTables.min.js"></script>
+  <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
+  <script src="../../static/assets/js/plugins/bootstrap-tagsinput.js"></script>
+  <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+  <script src="../../static/assets/js/plugins/jasny-bootstrap.min.js"></script>
+  <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
+  <script src="../../static/assets/js/plugins/fullcalendar.min.js"></script>
+  <!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
+  <script src="../../static/assets/js/plugins/jquery-jvectormap.js"></script>
+  <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+  <script src="../../static/assets/js/plugins/nouislider.min.js"></script>
+  <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+  <!-- Library for adding dinamically elements -->
+  <script src="../../static/assets/js/plugins/arrive.min.js"></script>
+  <!--  Google Maps Plugin    -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+  <!-- Chartist JS -->
+  <script src="../../static/assets/js/plugins/chartist.min.js"></script>
+  <!--  Notifications Plugin    -->
+  <script src="../../static/assets/js/plugins/bootstrap-notify.js"></script>
+  <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="../../static/assets/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
+  <!-- Material Dashboard DEMO methods, don't include it in your project! -->
+  <script src="../../static/assets/demo/demo.js"></script>
+  <!-- Control para el formulario dinámico -->
+  <script src="../../static/js/productos-academicos.js"></script>
+  <script>
+    function eliminar(id_actual){
+    Notiflix.Confirm.show (
+        'Eliminar',
+        '¿Estás seguro de eliminar el siguiente elemento?',
+        'Sí',
+        'No',
+        function okCb() {
+            let row = document.getElementById("contenedor"+id_actual);
+            //alert(row);
+            //body.removeChild(row);
+            if(row !== null){
+                while (row.hasChildNodes()){
+                    row.removeChild(row.lastChild);
+                }
+            }else{
+                alert ("No existe la caja previamente creada.");
+            }
+        },
+        function cancelCb() {
+            alert('Que siempre no');
+        },
+        {
+          width: '320px',
+          borderRadius: '8px',
+          // etc...
+        },
+      );
+    }
+  </script>
+  <script>
+    $(document).ready(function() {
+      $().ready(function() {
+        $sidebar = $('.sidebar');
+
+        $sidebar_img_container = $sidebar.find('.sidebar-background');
+
+        $full_page = $('.full-page');
+
+        $sidebar_responsive = $('body > .navbar-collapse');
+
+        window_width = $(window).width();
+      });
+    });
+  </script>
+  <script>
+    $(document).ready(function() {
+      // Javascript method's body can be found in assets/js/demos.js
+      md.initDashboardPageCharts();
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+{
+  "DataBase": {
+    "TypeUser": {
+      "admi" : {
+        "User": "dsa_admi",
+        "Pass": "sctAPWE_#F|PhzX%"
+      },
+      "direc" : {
+        "User": "dsa_director",
+        "Pass": "DMFJBXmHjeXk_V_T"
+      },
+      "profe": {
+        "User": "dsa_profesor",
+        "Pass": "jSMAwR+y#QMerx@A"
+      },
+      "rrhh": {
+        "User": "dsa_rrhh",
+        "Pass": "US%Q$nz&c!CKaJUq"
+      },
+      "default": {
+        "User": "dsa_default",
+        "Pass": "OHGlLrHZ?YonX@ZW"
+      }
+    },
+    "Schema" : "dsa",
+    "Host": "127.0.0.1"
+  }
+}

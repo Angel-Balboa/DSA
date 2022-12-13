@@ -1,0 +1,39 @@
+
+.select {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+}
+
+.desactivado {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.titulos h6, .titulos p{
+    display: inline-block;
+    margin-right: 40px;
+}
+
+.lista{
+    color: red;
+}
+
+table{
+    width: 100%;
+}
+
+.botones{
+    text-transform: uppercase;
+    margin-left: 60%;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+
+
